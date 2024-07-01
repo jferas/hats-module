@@ -16,7 +16,6 @@ contract HatsModuleTest is Test {
   uint256 public largeBytesLength = largeBytes.length;
 
   function _deployModule(string memory _moduleVersion, address _hatAddress, uint256 _hatId) public virtual {
-    // super.setUp();
     // deploy a new HatsModule to be tested by the test contracts below
     hatsModule = new HatsModule(_moduleVersion, _hatAddress, _hatId);
   }
