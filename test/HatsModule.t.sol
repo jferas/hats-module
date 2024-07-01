@@ -34,4 +34,10 @@ contract HatsModuleTest is Test {
     _deployModule(MODULE_VERSION, hatAddress, _hatId);
     assertEq(hatsModule.hatId(), _hatId, "incorrect hat id");
   }
+
+  function test_setUpCannotBeCalledTwice() public {
+    // expect revert if setUp is called again
+    vm.expectRevert();
+    hatsModule.setUp(abi.encode("another setUp attempt"));
+  }
 }
